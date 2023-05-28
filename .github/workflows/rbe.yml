@@ -44,5 +44,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: rust-by-example
+        name: rust-com-exemplos
         path: book
