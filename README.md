@@ -1,22 +1,21 @@
-# Rust By Example
+# Rust com Exemplos
 
-[![Build Status][travis-badge]][travis-repo]
+[![Estado da Construção][travis-badge]][travis-repo]
 
 [travis-badge]: https://travis-ci.com/rust-lang/rust-by-example.svg?branch=master
 [travis-repo]: https://travis-ci.com/rust-lang/rust-by-example
 
-Learn Rust with examples (Live code editor included)
+Estude Rust com exemplos (editor de código ao vivo incluído)
 
-## Using
+## Uso
 
-If you'd like to read Rust by Example, you can visit <https://doc.rust-lang.org/rust-by-example/>
-to read it online.
+Se gostarias de ler Rust com Exemplos, podes visitar <https://doc.rust-lang.org/rust-by-example/> para lê-lo ligado a rede.
 
-If you'd like to read it locally, [install Rust], and then:
+Se gostarias de lê-lo localmente, [instale o compilador da Rust][install Rust], e depois:
 
 ```bash
-git clone https://github.com/rust-lang/rust-by-example
-cd rust-by-example
+git clone https://github.com/nazarepiedady/rust-com-exemplos
+cd rust-com-exemplos
 cargo install mdbook
 mdbook build
 mdbook serve
@@ -24,16 +23,15 @@ mdbook serve
 
 [install Rust]: https://www.rust-lang.org/tools/install
 
-To be able to run the examples, you must be connected to the internet; you can
-read all content offline, however!
+Para seres capaz de executar os exemplos, deves estar conectado a internet; Contudo, podes ler todo o conteúdo desligado da rede!
 
-## Contributing
+## Contribuição
 
-Please see the [CONTRIBUTING.md] file for more details.
+Consulte o ficheiro [CONTRIBUTING.md] por mais detalhes.
 
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust-by-example/blob/master/CONTRIBUTING.md
 
-## Translations to other languages
+## Traduções para outros idiomas
 
 * [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
 * [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
@@ -41,17 +39,15 @@ Please see the [CONTRIBUTING.md] file for more details.
 * [Russian](https://github.com/ruRust/rust-by-example)
 * [Vietnamese](https://github.com/EyesCrypto-Insights/rust-by-example-vn)
 
-## License
+## Licença
 
-Rust by Example is licensed under either of
+O Rust com Exemplos está licenciado sob ou a
 
-* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
+* Licença Apache, Versão 2.0, ([LICENSE-APACHE](LICENSE-APACHE) ou
   <http://www.apache.org/licenses/LICENSE-2.0>)
-* MIT license ([LICENSE-MIT](LICENSE-MIT) or
+* Licença MIT ([LICENSE-MIT](LICENSE-MIT) ou
   <http://opensource.org/licenses/MIT>)
 
-at your option.
+a tua opção.
 
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in Rust by Example by you, as defined in the Apache-2.0 license, shall be
-dually licensed as above, without any additional terms or conditions.
+A menos que afirmes explicitamente de outro modo, qualquer contribuição intencionalmente submetida para inclusão na Rust com Exemplos por ti, como definido na licença Apache-2.0, será duplamente licenciado conforme acima, sem qualquer termos ou condições adicionais.
