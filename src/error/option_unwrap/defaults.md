@@ -1,6 +1,7 @@
 # Unpacking options and defaults
 
 There is more than one way to unpack an `Option` and fall back on a default if it is `None`. To choose the one that meets our needs, we need to consider the following:
+
 * do we need eager or lazy evaluation?
 * do we need to keep the original empty value intact, or modify it in place?
 
@@ -82,6 +83,7 @@ fn main() {
 ##  `get_or_insert_with()` evaluates lazily, modifies empty value in place
 
 Instead of explicitly providing a value to fall back on, we can pass a closure to `get_or_insert_with`, as follows:
+
 ```rust,editable
 #[derive(Debug)] 
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }

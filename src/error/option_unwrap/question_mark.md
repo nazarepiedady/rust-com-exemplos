@@ -1,9 +1,6 @@
 # Unpacking options with `?`
 
-You can unpack `Option`s by using `match` statements, but it's often easier to
-use the `?` operator. If `x` is an `Option`, then evaluating `x?` will return
-the underlying value if `x` is `Some`, otherwise it will terminate whatever
-function is being executed and return `None`.
+You can unpack `Option`s by using `match` statements, but it's often easier to use the `?` operator. If `x` is an `Option`, then evaluating `x?` will return the underlying value if `x` is `Some`, otherwise it will terminate whatever function is being executed and return `None`.
 
 ```rust,editable
 fn next_birthday(current_age: Option<u8>) -> Option<String> {
