@@ -6,12 +6,9 @@ We've seen that formatting is specified via a *format string*:
 * `format!("0x{:X}", foo)` -> [`"0xDEADBEEF"`][deadbeef]
 * `format!("0o{:o}", foo)` -> `"0o33653337357"`
 
-The same variable (`foo`) can be formatted differently depending on which
-*argument type* is used: `X` vs `o` vs *unspecified*.
+The same variable (`foo`) can be formatted differently depending on which *argument type* is used: `X` vs `o` vs *unspecified*.
 
-This formatting functionality is implemented via traits, and there is one trait
-for each argument type. The most common formatting trait is `Display`, which
-handles cases where the argument type is left unspecified: `{}` for instance.
+This formatting functionality is implemented via traits, and there is one trait for each argument type. The most common formatting trait is `Display`, which handles cases where the argument type is left unspecified: `{}` for instance.
 
 ```rust,editable
 use std::fmt::{self, Formatter, Display};
@@ -64,13 +61,11 @@ fn main() {
 }
 ```
 
-You can view a [full list of formatting traits][fmt_traits] and their argument
-types in the [`std::fmt`][fmt] documentation.
+You can view a [full list of formatting traits][fmt_traits] and their argument types in the [`std::fmt`][fmt] documentation.
 
 ### Activity
 
-Add an implementation of the `fmt::Display` trait for the `Color` struct above
-so that the output displays as:
+Add an implementation of the `fmt::Display` trait for the `Color` struct above so that the output displays as:
 
 ```text
 RGB (128, 255, 90) 0x80FF5A
