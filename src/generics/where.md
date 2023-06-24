@@ -1,9 +1,6 @@
 # Where clauses
 
-A bound can also be expressed using a `where` clause immediately
-before the opening `{`, rather than at the type's first mention. 
-Additionally, `where` clauses can apply bounds to arbitrary types, 
-rather than just to type parameters.
+A bound can also be expressed using a `where` clause immediately before the opening `{`, rather than at the type's first mention. Additionally, `where` clauses can apply bounds to arbitrary types, rather than just to type parameters.
 
 Some cases that a `where` clause is useful:
 
