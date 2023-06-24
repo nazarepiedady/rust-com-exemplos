@@ -4,9 +4,7 @@
 > 🛈 stable since: rust 1.65
 
 
-With `let`-`else`, a refutable pattern can match and bind variables
-in the surrounding scope like a normal `let`, or else diverge (e.g. `break`,
-`return`, `panic!`) when the pattern doesn't match.
+With `let`-`else`, a refutable pattern can match and bind variables in the surrounding scope like a normal `let`, or else diverge (e.g. `break`, `return`, `panic!`) when the pattern doesn't match.
 
 ```rust
 use std::str::FromStr;
@@ -25,9 +23,7 @@ fn get_count_item(s: &str) -> (u64, &str) {
 assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
 ```
 
-The scope of name bindings is the main thing that makes this different from
-`match` or `if let`-`else` expressions. You could previously approximate these
-patterns with an unfortunate bit of repetition and an outer `let`:
+The scope of name bindings is the main thing that makes this different from `match` or `if let`-`else` expressions. You could previously approximate these patterns with an unfortunate bit of repetition and an outer `let`:
 
 ```rust
 # use std::str::FromStr;

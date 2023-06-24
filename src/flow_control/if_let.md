@@ -19,8 +19,7 @@ match optional {
 
 ```
 
-`if let` is cleaner for this use case and in addition allows various
-failure options to be specified:
+`if let` is cleaner for this use case and in addition allows various failure options to be specified:
 
 ```rust,editable
 fn main() {
