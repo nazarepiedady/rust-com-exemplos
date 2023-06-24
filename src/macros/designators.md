@@ -1,7 +1,6 @@
 # Designators
 
-The arguments of a macro are prefixed by a dollar sign `$` and type annotated
-with a *designator*:
+The arguments of a macro are prefixed by a dollar sign `$` and type annotated with a *designator*:
 
 ```rust,editable
 macro_rules! create_function {
