@@ -1,12 +1,10 @@
 # Derive
 
-The compiler is capable of providing basic implementations for some traits via
-the `#[derive]` [attribute][attribute]. These traits can still be
-manually implemented if a more complex behavior is required.
+The compiler is capable of providing basic implementations for some traits via the `#[derive]` [attribute][attribute]. These traits can still be manually implemented if a more complex behavior is required.
 
 The following is a list of derivable traits:
-* Comparison traits:
-  [`Eq`][eq], [`PartialEq`][partial-eq], [`Ord`][ord], [`PartialOrd`][partial-ord].
+
+* Comparison traits: [`Eq`][eq], [`PartialEq`][partial-eq], [`Ord`][ord], [`PartialOrd`][partial-ord].
 * [`Clone`][clone], to create `T` from `&T` via a copy.
 * [`Copy`][copy], to give a type 'copy semantics' instead of 'move semantics'.
 * [`Hash`][hash], to compute a hash from `&T`.
@@ -62,6 +60,7 @@ fn main() {
 ```
 
 ### See also:
+
 [`derive`][derive]
 
 [attribute]: ../attribute.md

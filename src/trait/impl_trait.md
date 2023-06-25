@@ -27,8 +27,7 @@ fn parse_csv_document<R: std::io::BufRead>(src: R) -> std::io::Result<Vec<Vec<St
 }
 ```
 
-`parse_csv_document` is generic, allowing it to take any type which implements BufRead, such as `BufReader<File>` or `[u8]`,
-but it's not important what type `R` is, and `R` is only used to declare the type of `src`, so the function can also be written as:
+`parse_csv_document` is generic, allowing it to take any type which implements BufRead, such as `BufReader<File>` or `[u8]`, but it's not important what type `R` is, and `R` is only used to declare the type of `src`, so the function can also be written as:
 
 ```rust,editable
 fn parse_csv_document(src: impl std::io::BufRead) -> std::io::Result<Vec<Vec<String>>> {
@@ -51,8 +50,7 @@ Note that using `impl Trait` as an argument type means that you cannot explicitl
 
 ## As a return type
 
-If your function returns a type that implements `MyTrait`, you can write its
-return type as `-> impl MyTrait`. This can help simplify your type signatures quite a lot!
+If your function returns a type that implements `MyTrait`, you can write its return type as `-> impl MyTrait`. This can help simplify your type signatures quite a lot!
 
 ```rust,editable
 use std::iter;
@@ -89,10 +87,7 @@ fn main() {
 }
 ```
 
-More importantly, some Rust types can't be written out. For example, every
-closure has its own unnamed concrete type. Before `impl Trait` syntax, you had
-to allocate on the heap in order to return a closure. But now you can do it all
-statically, like this:
+More importantly, some Rust types can't be written out. For example, every closure has its own unnamed concrete type. Before `impl Trait` syntax, you had to allocate on the heap in order to return a closure. But now you can do it all statically, like this:
 
 ```rust,editable
 // Returns a function that adds `y` to its input
@@ -107,10 +102,7 @@ fn main() {
 }
 ```
 
-You can also use `impl Trait` to return an iterator that uses `map` or `filter`
-closures! This makes using `map` and `filter` easier. Because closure types don't
-have names, you can't write out an explicit return type if your function returns
-iterators with closures. But with `impl Trait` you can do this easily:
+You can also use `impl Trait` to return an iterator that uses `map` or `filter` closures! This makes using `map` and `filter` easier. Because closure types don't have names, you can't write out an explicit return type if your function returns iterators with closures. But with `impl Trait` you can do this easily:
 
 ```rust,editable
 fn double_positives<'a>(numbers: &'a Vec<i32>) -> impl Iterator<Item = i32> + 'a {
