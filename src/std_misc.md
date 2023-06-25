@@ -1,7 +1,6 @@
 # Std misc
 
-Many other types are provided by the std library to support
-things such as:
+Many other types are provided by the std library to support things such as:
 
 * Threads
 * Channels
