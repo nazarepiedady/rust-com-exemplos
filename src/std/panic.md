@@ -1,11 +1,8 @@
 # `panic!`
 
-The `panic!` macro can be used to generate a panic and start unwinding
-its stack. While unwinding, the runtime will take care of freeing all the
-resources *owned* by the thread by calling the destructor of all its objects.
+The `panic!` macro can be used to generate a panic and start unwinding its stack. While unwinding, the runtime will take care of freeing all the resources *owned* by the thread by calling the destructor of all its objects.
 
-Since we are dealing with programs with only one thread, `panic!` will cause the
-program to report the panic message and exit.
+Since we are dealing with programs with only one thread, `panic!` will cause the program to report the panic message and exit.
 
 ```rust,editable,ignore,mdbook-runnable
 // Re-implementation of integer division (/)
