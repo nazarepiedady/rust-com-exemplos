@@ -1,61 +1,61 @@
-# Rust by Example
+# Rust com Exemplos
 
-[Rust][rust] is a modern systems programming language focusing on safety, speed, and concurrency. It accomplishes these goals by being memory safe without using garbage collection.
+[Rust][rust] é uma linguagem de programação de sistemas moderna focada na segurança, velocidade e concorrência. Ela cumpre estes objetivos sendo segura quanto ao uso da memória sem usar recolha de lixo.
 
-Rust by Example (RBE) is a collection of runnable examples that illustrate various Rust concepts and standard libraries. To get even more out of these examples, don't forget to [install Rust locally][install] and check out the [official docs][std]. Additionally for the curious, you can also [check out the source code for this site][home].
+Rust com Exemplos é uma coleção de exemplos executáveis que ilustram vários conceitos da Rust e bibliotecas padrão. Para obter ainda mais destes exemplos, não te esqueças de [instalar a Rust localmente][install] e consulte a [documentação oficial][std]. Adicionalmente para os curiosos, também podes [consultar o código-fonte para este local][home].
 
-Now let's begin!
+Agora começaremos!
 
-- [Hello World](hello.md) - Start with a traditional Hello World program.
+- [Olá Mundo](hello.md) - Comece com um programa "Olá Mundo" tradicional.
 
-- [Primitives](primitives.md) - Learn about signed integers, unsigned integers and other primitives.
+- [Primitivos](primitives.md) - Estude os inteiros com sinal, inteiros sem sinal e outros primitivos.
 
-- [Custom Types](custom_types.md) - `struct` and `enum`.
+- [Tipos Personalizados](custom_types.md) - `struct` e `enum`.
 
-- [Variable Bindings](variable_bindings.md) - mutable bindings, scope, shadowing.
+- [Vínculos de Variável](variable_bindings.md) - vínculos mutáveis, âmbito, obscurecimento.
 
-- [Types](types.md) - Learn about changing and defining types.
+- [Tipos](types.md) - Estude as mudanças e definição de tipos.
 
-- [Conversion](conversion.md)
+- [Conversão](conversion.md)
 
-- [Expressions](expression.md)
+- [Expressões](expression.md)
 
-- [Flow of Control](flow_control.md) - `if`/`else`, `for`, and others.
+- [Controlo de Fluxo](flow_control.md) - `if`/`else`, `for`, e outros.
 
-- [Functions](fn.md) - Learn about Methods, Closures and Higher Order Functions.
+- [Funções](fn.md) - Estude os Métodos, Fechamentos e Funções de Ordem Superior.
 
-- [Modules](mod.md) - Organize code using modules
+- [Módulos](mod.md) - Organize o código usando módulos.
 
-- [Crates](crates.md) - A crate is a compilation unit in Rust. Learn to create a library.
+- [Caixote](crates.md) - Um caixote é uma unidade de compilação na Rust. Aprenda a criar uma biblioteca.
 
-- [Cargo](cargo.md) - Go through some basic features of the official Rust package management tool.
+- [Cargo](cargo.md) - Passe por algumas funcionalidades básicas da ferramenta de gestão de pacote da Rust oficial.
 
-- [Attributes](attribute.md) - An attribute is metadata applied to some module, crate or item.
+- [Atributos](attribute.md) - Um atributo é um meta-dado aplicado à algum módulo, caixote ou item.
 
-- [Generics](generics.md) - Learn about writing a function or data type which can work for multiple types of arguments.
+- [Genéricos](generics.md) - Aprenda a escrever uma função ou tipo de dado que pode trabalhar com vários tipos de argumentos.
 
-- [Scoping rules](scope.md) - Scopes play an important part in ownership, borrowing, and lifetimes.
+- [Regras de Delimitação do Âmbito](scope.md) - Os âmbitos desempenham um parte importante na posse, empréstimo, e vidas.
 
-- [Traits](trait.md) - A trait is a collection of methods defined for an unknown type: `Self`
+- [Características](trait.md) - Uma característica é uma coleção de métodos definidos por um tipo desconhecido: `Self`
 
 - [Macros](macros.md)
 
-- [Error handling](error.md) - Learn Rust way of handling failures.
+- [Manipulação de erro](error.md) - Estude a maneira da Rust de lidar com falhas.
 
-- [Std library types](std.md) - Learn about some custom types provided by `std` library.
+- [Tipos da Biblioteca `std`](std.md) - Estude alguns tipos personalizados fornecidos pela biblioteca `std`.
 
-- [Std misc](std_misc.md) - More custom types for file handling, threads.
+- [Outros `std`](std_misc.md) - Mais tipos personalizados para manipulação de ficheiro, linhas de processamento.
 
-- [Testing](testing.md) - All sorts of testing in Rust.
+- [Testes](testing.md) - Todos os tipos de testes na Rust.
 
-- [Unsafe Operations](unsafe.md)
+- [Operações Perigosas](unsafe.md)
 
-- [Compatibility](compatibility.md)
+- [Compatibilidade](compatibility.md)
 
-- [Meta](meta.md) - Documentation, Benchmarking.
+- [Meta](meta.md) - Documentação, Analise Comparativa.
 
 
 [rust]: https://www.rust-lang.org/
 [install]: https://www.rust-lang.org/tools/install
 [std]: https://doc.rust-lang.org/std/
-[home]: https://github.com/rust-lang/rust-by-example
+[home]: https://github.com/nazarepiedady/rust-com-exemplos
