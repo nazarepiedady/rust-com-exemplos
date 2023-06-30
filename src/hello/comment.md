@@ -1,48 +1,49 @@
-# Comments
+# Comentários
 
-Any program requires comments, and Rust supports a few different varieties:
+Qualquer programa requer comentários, e a Rust suporta algumas variedades diferentes:
 
-* *Regular comments* which are ignored by the compiler:
-  * `// Line comments which go to the end of the line.`
-  * `/* Block comments which go to the closing delimiter. */`
-* *Doc comments* which are parsed into HTML library [documentation][docs]:
-  * `/// Generate library docs for the following item.`
-  * `//! Generate library docs for the enclosing item.`
+* *Comentários normais* que são ignorados pelo compilador:
+  * `// Comentários de linha que vão até ao final da linha.`
+  * `/* Comentários de bloco que vão até o delimitador de fechamento. */`
+* *Comentários de documentação* que são analisados para [documentação][docs] da biblioteca em HTML:
+  * `/// Gera documentações da biblioteca para o seguinte item.`
+  * `//! Gera as documentações da biblioteca para o item de fechamento.`
 
 ```rust,editable
 fn main() {
-    // This is an example of a line comment.
-    // There are two slashes at the beginning of the line.
-    // And nothing written after these will be read by the compiler.
+    // Isto é um exemplo de comentário duma linha.
+    // Existem duas barras no princípio da linha.
+    // E nada escrito depois destas será lido pelo compilador.
 
     // println!("Hello, world!");
 
-    // Run it. See? Now try deleting the two slashes, and run it again.
+    // Execute-o. Vês? Agora tente eliminar as duas barras, e execute-o novamente.
 
     /*
-     * This is another type of comment, a block comment. In general,
-     * line comments are the recommended comment style. But block comments
-     * are extremely useful for temporarily disabling chunks of code.
-     * /* Block comments can be /* nested, */ */ so it takes only a few
-     * keystrokes to comment out everything in this main() function.
-     * /*/*/* Try it yourself! */*/*/
+     * Isto é um outro tipo de comentário, um bloco de comentário. Em geral,
+     * comentários de linha são o estilo de comentário recomendado.
+     * Mas os comentários de bloco são extremamente úteis para
+     * desativar temporariamente pedaços de código.
+     * /* Comentários de bloco podem ser /* encaixados, */ */ então apenas custa
+     * alguns toques na tecla para comentar tudo nesta função `main()`.
+     * /*/*/* Experimente-o tu mesmo! */*/*/
      */
 
     /*
-    Note: The previous column of `*` was entirely for style. There's
-    no actual need for it.
+    Nota: a anterior coluna de `*` foi inteiramente para estilo. Não existe
+    de fato necessidade disto.
     */
 
-    // You can manipulate expressions more easily with block comments
-    // than with line comments. Try deleting the comment delimiters
-    // to change the result:
+    // Nós podemos manipular as expressões mais facilmente com comentários
+    // de bloco do que com comentários de linha.
+    // Tente eliminar os delimitadores de comentário para mudar o resultado:
     let x = 5 + /* 90 + */ 5;
     println!("Is `x` 10 or 100? x = {}", x);
 }
 ```
 
-### See also:
+### Consulte também:
 
-[Library documentation][docs]
+[Documentação de biblioteca][docs]
 
 [docs]: ../meta/doc.md
