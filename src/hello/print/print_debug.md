@@ -1,51 +1,51 @@
-# Debug
+# Depuração
 
-All types which want to use `std::fmt` formatting `traits` require an implementation to be printable. Automatic implementations are only provided for types such as in the `std` library. All others *must* be manually implemented somehow.
+Todos os tipos que quiserem usar `traits` de formatação de `std::fmt` exigem que uma implementação seja imprimível. Implementações automáticas são apenas fornecidas para tipos tais como na biblioteca `std`. Todos os outros *devem* ser manualmente implementados de alguma maneira.
 
-The `fmt::Debug` `trait` makes this very straightforward. *All* types can `derive` (automatically create) the `fmt::Debug` implementation. This is not true for `fmt::Display` which must be manually implemented:
+A `trait` de `fmt::Debug` torna isto muito direto. *Todos* os tipos podem `derive` (criar automaticamente) a implementação `fmt::Debug`. Isto não é verdadeiro para `fmt::Display` que deve ser implementada manualmente:
 
 ```rust
-// This structure cannot be printed either with `fmt::Display` or
-// with `fmt::Debug`.
+// Esta estrutura não pode ser impressa nem com `fmt::Display` ou
+// com `fmt::Debug`.
 struct UnPrintable(i32);
 
-// The `derive` attribute automatically creates the implementation
-// required to make this `struct` printable with `fmt::Debug`.
+// O atributo `derive` cria automaticamente a implementação exigida
+// para tornar esta `struct` imprimível com `fmt::Debug`.
 #[derive(Debug)]
 struct DebugPrintable(i32);
 ```
 
-All `std` library types are automatically printable with `{:?}` too:
+Todos os tipos da biblioteca `std` são automaticamente imprimíveis também com `{:?}`:
 
 ```rust,editable
-// Derive the `fmt::Debug` implementation for `Structure`. `Structure`
-// is a structure which contains a single `i32`.
+// Derivar a implementação `fmt::Debug` para `Structure`.
+// `Structure` é uma estrutura que contém um único `i32`.
 #[derive(Debug)]
 struct Structure(i32);
 
-// Put a `Structure` inside of the structure `Deep`. Make it printable
-// also.
+// Colocar uma `Structure` dentro da estrutura `Deep`.
+// Também a torna imprimível.
 #[derive(Debug)]
 struct Deep(Structure);
 
 fn main() {
-    // Printing with `{:?}` is similar to with `{}`.
+    // Imprimir com `{:?}` é semelhante à com `{}`.
     println!("{:?} months in a year.", 12);
     println!("{1:?} {0:?} is the {actor:?} name.",
              "Slater",
              "Christian",
              actor="actor's");
 
-    // `Structure` is printable!
+    // `Structure` é imprimível!
     println!("Now {:?} will print!", Structure(3));
 
-    // The problem with `derive` is there is no control over how
-    // the results look. What if I want this to just show a `7`?
+    // O problema com `derive` é que não existe controlo sobre
+    // a aparência do resultado. E se quisermos que isto só mostre um `7`?
     println!("Now {:?} will print!", Deep(Structure(7)));
 }
 ```
 
-So `fmt::Debug` definitely makes this printable but sacrifices some elegance. Rust also provides "pretty printing" with `{:#?}`:
+Assim `fmt::Debug` definitivamente torna isto imprimível mas sacrifica alguma elegância. A Rust também fornece "impressão elegante" com `{:#?}`:
 
 ```rust,editable
 #[derive(Debug)]
@@ -59,17 +59,17 @@ fn main() {
     let age = 27;
     let peter = Person { name, age };
 
-    // Pretty print
+    // Imprimir com elegância
     println!("{:#?}", peter);
 }
 ```
 
-One can manually implement `fmt::Display` to control the display.
+Um pode manualmente implementar `fmt::Display` para controlar a exibição.
 
-### See also:
+### Consulte também:
 
 [`attributes`][attributes], [`derive`][derive], [`std::fmt`][fmt],
-and [`struct`][structs]
+e [`struct`][structs]
 
 [attributes]: https://doc.rust-lang.org/reference/attributes.html
 [derive]: ../../trait/derive.md
