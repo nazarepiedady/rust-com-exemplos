@@ -1,14 +1,14 @@
-# Formatting
+# Formatação
 
-We've seen that formatting is specified via a *format string*:
+Nós vimos que a formatação é especificada através de uma *sequência de caracteres de formatação*:
 
 * `format!("{}", foo)` -> `"3735928559"`
 * `format!("0x{:X}", foo)` -> [`"0xDEADBEEF"`][deadbeef]
 * `format!("0o{:o}", foo)` -> `"0o33653337357"`
 
-The same variable (`foo`) can be formatted differently depending on which *argument type* is used: `X` vs `o` vs *unspecified*.
+A mesma variável (`foo`) pode ser formatada diferentemente dependendo do qual *tipo de argumento* é usado: `X` vs `o` vs *não especificado*.
 
-This formatting functionality is implemented via traits, and there is one trait for each argument type. The most common formatting trait is `Display`, which handles cases where the argument type is left unspecified: `{}` for instance.
+Esta funcionalidade de formatação é implementada através das características, e existe uma característica para cada tipo de argumento. A característica de formatação mais comum é `Display`, que lida com os casos onde o tipo do argumento é deixado não especificado: `{}` por exemplo.
 
 ```rust,editable
 use std::fmt::{self, Formatter, Display};
@@ -22,13 +22,14 @@ struct City {
 }
 
 impl Display for City {
-    // `f` is a buffer, and this method must write the formatted string into it.
+    // `f` é um amortecedor, e este método deve escrever a
+    // sequência de caracteres de formatação para ela.
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
 
-        // `write!` is like `format!`, but it will write the formatted string
-        // into a buffer (the first argument).
+        // `write!` é como `format!`, mas escreverá a sequência de caracteres de
+        // formatação para um amortecedor (o primeiro argumento).
         write!(f, "{}: {:.3}°{} {:.3}°{}",
                self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
     }
@@ -54,18 +55,18 @@ fn main() {
         Color { red: 0, green: 3, blue: 254 },
         Color { red: 0, green: 0, blue: 0 },
     ] {
-        // Switch this to use {} once you've added an implementation
-        // for fmt::Display.
+        // Troque isto para usar {} uma vez que tiveres adicionado uma
+        // implementação para `fmt::Display`.
         println!("{:?}", color);
     }
 }
 ```
 
-You can view a [full list of formatting traits][fmt_traits] and their argument types in the [`std::fmt`][fmt] documentation.
+Tu podes ver uma [lista completa de características de formatação][fmt_traits] e seus tipos de argumentos na documentação da [`std::fmt`][fmt].
 
-### Activity
+### Atividade
 
-Add an implementation of the `fmt::Display` trait for the `Color` struct above so that the output displays as:
+Adicione uma implementação da característica `fmt::Display` para a estrutura `Color` acima para que a saída exiba algo como:
 
 ```text
 RGB (128, 255, 90) 0x80FF5A
@@ -73,12 +74,12 @@ RGB (0, 3, 254) 0x0003FE
 RGB (0, 0, 0) 0x000000
 ```
 
-Two hints if you get stuck:
+Duas sugestões caso ficares sem saber o que fazer:
 
-* You [may need to list each color more than once][named_parameters].
-* You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
+* Tu [podes precisar de listar cada cor mais de uma vez][named_parameters].
+* Tu podes [acolchoar com zeros para uma largura de 2][fmt_width] com `:0>2`.
 
-### See also:
+### Consulte também:
 
 [`std::fmt`][fmt]
 
