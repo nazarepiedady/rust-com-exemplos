@@ -1,56 +1,55 @@
-# Primitives
+# Primitivos
 
-Rust provides access to a wide variety of `primitives`. A sample includes:
+A Rust fornece acesso à uma grande variedade de `primitives`. Um amostra inclui:
 
-### Scalar Types
+### Tipos Escalares
 
-* Signed integers: `i8`, `i16`, `i32`, `i64`, `i128` and `isize` (pointer size)
-* Unsigned integers: `u8`, `u16`, `u32`, `u64`, `u128` and `usize` (pointer size)
-* Floating point: `f32`, `f64`
-* `char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)
-* `bool` either `true` or `false`
-* The unit type `()`, whose only possible value is an empty tuple: `()`
+* Inteiros com sinais:
+* Inteiros sem sinais:
+* Ponto flutuante
+* Os valores escalares de código universal de `char` como `'a'`, `'α'` e `'∞'` (são 4 bytes cada)
+* `bool` ou é `true` ou é `false`
+* O tipo de unitário `()`, cujo único valor possível é uma tupla vazia: `()`
 
-Despite the value of a unit type being a tuple, it is not considered a compound type because it does not contain multiple values.
+Apesar do valor dum tipo unitário ser uma tupla, não é considerado um tipo composto porque não contém vários valores.
 
-### Compound Types
+### Tipos Compostos
 
-* Arrays like `[1, 2, 3]`
-* Tuples like `(1, true)`
+* Arranjos como `[1, 2, 3]`
+* Tuplas como `(1, true)`
 
-Variables can always be *type annotated*. Numbers may additionally be annotated via a *suffix* or *by default*. Integers default to `i32` and floats to `f64`. Note that Rust can also infer types from context:
+As variáveis podem sempre ser *anotadas por tipo*. Os números podem adicionalmente ser anotados através dum *sufixo* ou *por padrão*. Os inteiros predefine para `i32` e flutuantes para `f64`. Nota que a Rust também pode inferir tipos a partir do contexto:
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
-    // Variables can be type annotated.
+    // Variáveis podem ser anotadas por tipo.
     let logical: bool = true;
 
-    let a_float: f64 = 1.0;  // Regular annotation
-    let an_integer   = 5i32; // Suffix annotation
+    let an_integer   = 5i32; // Suffix annotation Anotação de sufixo
 
-    // Or a default will be used.
+    // Ou um padrão será usado.
     let default_float   = 3.0; // `f64`
     let default_integer = 7;   // `i32`
 
-    // A type can also be inferred from context.
-    let mut inferred_type = 12; // Type i64 is inferred from another line.
+    // Um tipo também pode ser inferido a partir do contexto.
+    let mut inferred_type = 12; // O tipo i64 é inferido a partir da outra linha.
     inferred_type = 4294967296i64;
 
-    // A mutable variable's value can be changed.
-    let mut mutable = 12; // Mutable `i32`
+    // Um valor da variável mutável pode ser mudado.
+    let mut mutable = 12; // `i32` mutável
     mutable = 21;
 
-    // Error! The type of a variable can't be changed.
+    // Erro! O tipo duma variável não pode ser mudado.
     mutable = true;
 
-    // Variables can be overwritten with shadowing.
+    // As variáveis podem ser sobrescritas com obscurecimento.
     let mutable = true;
 }
 ```
 
-### See also:
+### Consulte também:
 
-[the `std` library][std], [`mut`][mut], [`inference`][inference], and
+[a biblioteca `std`][std], [`mut`][mut], [`inference`][inference], e
 [`shadowing`][shadowing]
 
 [std]: https://doc.rust-lang.org/std/
