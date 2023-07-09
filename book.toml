@@ -2,6 +2,7 @@
 title = "Rust com Exemplos"
 description = "Rust com Exemplos (RCE) é uma coleção de exemplos executáveis que ilustram vários conceitos e bibliotecas padrão da Rust."
 author = "A Comunidade da Rust"
+language = "pt"
 
 [output.html.playpen]
 editable = true
