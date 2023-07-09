@@ -33,6 +33,7 @@ Consulte o ficheiro [CONTRIBUTING.md] por mais detalhes.
 
 ## Traduções para outros idiomas
 
+* [English](https://github.com/rust-lang/rust-by-example)
 * [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
 * [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
 * [French](https://github.com/Songbird0/FR_RBE)
