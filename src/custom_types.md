@@ -1,8 +1,8 @@
-# Custom Types
+# Tipos Personalizados
 
-Rust custom data types are formed mainly through the two keywords:
+Os tipos de dados personalizados da Rust são principalmente formados através de duas palavras-chave:
 
-* `struct`: define a structure
-* `enum`: define an enumeration
+* `struct`: define uma estrutura
+* `enum`: define uma enumeração
 
-Constants can also be created via the `const` and `static` keywords.
+As constantes também podem ser criadas através das palavras-chave `const` e `static`.
