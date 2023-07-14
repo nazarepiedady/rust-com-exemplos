@@ -4,7 +4,7 @@ A palavra-chave `enum` permite a criação dum tipo que pode ser um das poucas v
 
 ```rust,editable
 // Criar uma `enum` para classificar um evento de Web.
-// Nota como nomes e informação juntos especificar a variante:
+// Nota como nomes e o tipo da informação juntos especificam a variante:
 // `PageLoad != PageUnload` e `KeyPress(char) != Paste(String)`.
 // Cada um é diferente e independente.
 enum WebEvent {
