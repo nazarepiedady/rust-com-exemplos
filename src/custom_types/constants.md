@@ -33,7 +33,7 @@ fn main() {
 
 ### Consulte também:
 
-[O RFC de `const`/`static`](https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md), [vida útil de `'static`][static].
+[O RFC de `const`/`static`](https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md), [vida útil da `'static`][static].
 
 [static]: ../scope/lifetime/static_lifetime.md
 [unsafe]: ../unsafe.md
