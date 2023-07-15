@@ -1,9 +1,9 @@
-# use
+# `use`
 
-The `use` declaration can be used so manual scoping isn't needed:
+A declaração `use` pode ser usado então a delimitação do âmbito não é necessária:
 
 ```rust,editable
-// An attribute to hide warnings for unused code.
+// Um atributo para esconder avisos de código não usado.
 #![allow(dead_code)]
 
 enum Status {
@@ -17,34 +17,35 @@ enum Work {
 }
 
 fn main() {
-    // Explicitly `use` each name so they are available without
-    // manual scoping.
+    // Usar explicitamente cada nome assim estão disponíveis
+    // sem a delimitação manual.
     use crate::Status::{Poor, Rich};
-    // Automatically `use` each name inside `Work`.
+    // Usar automaticamente cada nome dentro de `Work`.
     use crate::Work::*;
 
-    // Equivalent to `Status::Poor`.
+    // Equivalente ao `Status::Poor`.
     let status = Poor;
-    // Equivalent to `Work::Civilian`.
+    // Equivalente ao `Work::Civilian`.
     let work = Civilian;
 
     match status {
-        // Note the lack of scoping because of the explicit `use` above.
+        // Nota a falta de delimitação de âmbito por causa do
+        // uso explícito acima.
         Rich => println!("The rich have lots of money!"),
         Poor => println!("The poor have no money..."),
     }
 
     match work {
-        // Note again the lack of scoping.
+        // Nota novamente a falte de delimitação do âmbito.
         Civilian => println!("Civilians work!"),
         Soldier  => println!("Soldiers fight!"),
     }
 }
 ```
 
-### See also:
+### Consulte também:
 
-[`match`][match] and [`use`][use] 
+[`match`][match] e [`use`][use] 
 
 [use]: ../../mod/use.md
 [match]: ../../flow_control/match.md
