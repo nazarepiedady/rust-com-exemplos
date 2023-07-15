@@ -1,55 +1,60 @@
-# Testcase: linked-list
+# Caso de Teste: Lista Ligada
 
-A common way to implement a linked-list is via `enums`:
+Um maneira comum de implementar uma lista ligada é através de `enums`:
 
 ```rust,editable
 use crate::List::*;
 
 enum List {
-    // Cons: Tuple struct that wraps an element and a pointer to the next node
+    // Cons: estrutura de tipo que envolve um elemento e 
+    // um ponteiro para o próximo nó.
     Cons(u32, Box<List>),
-    // Nil: A node that signifies the end of the linked list
+    // Nil: Um nó que significa o fim da lista ligada
     Nil,
 }
 
-// Methods can be attached to an enum
+// Os métodos podem ser anexados à numa enumeração
 impl List {
-    // Create an empty list
+    // Criar uma lista vazia
     fn new() -> List {
-        // `Nil` has type `List`
+        // `Nil` tem o tipo `List`
         Nil
     }
 
-    // Consume a list, and return the same list with a new element at its front
+    // Consumir uma lista, e retornar a mesma lista com
+    // um novo elemento na sua frente
     fn prepend(self, elem: u32) -> List {
-        // `Cons` also has type List
+        // `Cons` também tem o tipo `List`
         Cons(elem, Box::new(self))
     }
 
-    // Return the length of the list
+    // Retornar o comprimento da lista
     fn len(&self) -> u32 {
-        // `self` has to be matched, because the behavior of this method
-        // depends on the variant of `self`
-        // `self` has type `&List`, and `*self` has type `List`, matching on a
-        // concrete type `T` is preferred over a match on a reference `&T`
-        // after Rust 2018 you can use self here and tail (with no ref) below as well,
-        // rust will infer &s and ref tail. 
+        // `self` precisa ser correspondido, porque o comportamento deste método
+        // depende da variante do `self`.
+        // `self` tem o tipo `&List`, e `*self` tem o tipo `List`,
+        // correspondência dum tipo concreto `T` é preferida sobre 
+        // uma correspondência numa referência `&T`, depois da Rust 2018 
+        // podes usar `self` aqui e também perseguir (sem referência) abaixo,
+        // Rust inferirá `&s` e referenciará a cauda.
         // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html
         match *self {
-            // Can't take ownership of the tail, because `self` is borrowed;
-            // instead take a reference to the tail
+            // Não possível tomar posse da cauda, porque `self` é emprestado;
+            // ao invés disto recebe uma referência à cauda
             Cons(_, ref tail) => 1 + tail.len(),
-            // Base Case: An empty list has zero length
+            // Caso de Base: Uma lista vaziam tem comprimento zero
             Nil => 0
         }
     }
 
-    // Return representation of the list as a (heap allocated) string
+    // Retornar a representação da lista como uma
+    // sequência de caracteres (monte alocado)
     fn stringify(&self) -> String {
         match *self {
             Cons(head, ref tail) => {
-                // `format!` is similar to `print!`, but returns a heap
-                // allocated string instead of printing to the console
+                // `format!` é semelhante à `print!`, mas retorna uma
+                // sequência de caracteres de monte alocado de impressão
+                // para a consola.
                 format!("{}, {}", head, tail.stringify())
             },
             Nil => {
@@ -60,23 +65,23 @@ impl List {
 }
 
 fn main() {
-    // Create an empty linked list
+    // Criar uma lista ligada vazia
     let mut list = List::new();
 
-    // Prepend some elements
+    // Adicionar ao começo da lista alguns elementos
     list = list.prepend(1);
     list = list.prepend(2);
     list = list.prepend(3);
 
-    // Show the final state of the list
+    // Mostrar o estado final da lista
     println!("linked list has length: {}", list.len());
     println!("{}", list.stringify());
 }
 ```
 
-### See also:
+### Consulte também:
 
-[`Box`][box] and [methods][methods]
+[`Box`][box] e [métodos][methods]
 
 [box]: ../../std/box.md
 [methods]: ../../fn/methods.md
