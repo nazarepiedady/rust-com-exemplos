@@ -1,19 +1,19 @@
-# C-like
+# Parecida com C
 
-`enum` can also be used as C-like enums.
+`enum` também pode ser usado como enumerações parecidas com C.
 
 ```rust,editable
-// An attribute to hide warnings for unused code.
+// Um atributo para esconder os avisos de código não usado.
 #![allow(dead_code)]
 
-// enum with implicit discriminator (starts at 0)
+// enumeração com discriminador implícito (começa em 0)
 enum Number {
     Zero,
     One,
     Two,
 }
 
-// enum with explicit discriminator
+// enumeração com discriminador explícito
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,
@@ -21,7 +21,7 @@ enum Color {
 }
 
 fn main() {
-    // `enums` can be cast as integers.
+    // `enums` podem ser moldados como inteiros.
     println!("zero is {}", Number::Zero as i32);
     println!("one is {}", Number::One as i32);
 
@@ -30,8 +30,8 @@ fn main() {
 }
 ```
 
-### See also:
+### Consulte também:
 
-[casting][cast]
+[moldagem][cast]
 
 [cast]: ../../types/cast.md
