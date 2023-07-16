@@ -1,29 +1,32 @@
-# Scope and Shadowing
+# Âmbito e Obscurecimento
 
-Variable bindings have a scope, and are constrained to live in a *block*. A block is a collection of statements enclosed by braces `{}`.
+Os vínculos de variável têm um âmbito, e são obrigados a viver num *bloco*. Um bloco é uma coleção de declarações fechadas por chavetas `{}`.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
-    // This binding lives in the main function
+    // Este vínculo vive na função principal
     let long_lived_binding = 1;
 
-    // This is a block, and has a smaller scope than the main function
+    // Isto é um bloco, e tem um âmbito mais pequeno do que a função principal
     {
-        // This binding only exists in this block
+        // Este vínculo apenas existe neste bloco
         let short_lived_binding = 2;
 
         println!("inner short: {}", short_lived_binding);
     }
     // End of the block
+    // Fim do bloco
 
-    // Error! `short_lived_binding` doesn't exist in this scope
+    // Erro! `short_lived_binding` não existe neste âmbito
     println!("outer short: {}", short_lived_binding);
-    // FIXME ^ Comment out this line
+    // FIXME ^ Comente esta linha
 
     println!("outer long: {}", long_lived_binding);
 }
 ```
-Also, [variable shadowing][variable-shadow] is allowed.
+
+Além disto, [obscurecimento de variável][variable-shadow] é permitido.
+
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
     let shadowed_binding = 1;
@@ -31,16 +34,17 @@ fn main() {
     {
         println!("before being shadowed: {}", shadowed_binding);
 
-        // This binding *shadows* the outer one
+        // Este vínculo *obscurece* aquela que está no exterior
         let shadowed_binding = "abc";
 
         println!("shadowed in inner block: {}", shadowed_binding);
     }
     println!("outside inner block: {}", shadowed_binding);
 
-    // This binding *shadows* the previous binding
+    // Este vínculo *obscurece* o vínculo anterior
     let shadowed_binding = 2;
     println!("shadowed in outer block: {}", shadowed_binding);
 }
 ```
+
 [variable-shadow]: https://en.wikipedia.org/wiki/Variable_shadowing
