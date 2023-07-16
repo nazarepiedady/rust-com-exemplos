@@ -1,8 +1,8 @@
-# Variable Bindings
+# Vínculos de Variável
 
-Rust provides type safety via static typing. Variable bindings can be type annotated when declared. However, in most cases, the compiler will be able to infer the type of the variable from the context, heavily reducing the annotation burden.
+A Rust fornece segurança de tipo através da definição de tipos estáticos. Os vínculos de variável pode ter o seu tipo anotado quando declarados. No entanto, na maioria dos casos, o compilador será capaz de inferir o tipo da variável a partir do contexto, reduzindo grandemente o fardo da anotação.
 
-Values (like literals) can be bound to variables, using the `let` binding.
+Os valores (tais como literais) pode ser vinculados às variáveis, usando o vínculo `let`.
 
 ```rust,editable
 fn main() {
@@ -10,19 +10,19 @@ fn main() {
     let a_boolean = true;
     let unit = ();
 
-    // copy `an_integer` into `copied_integer`
+    // copiar `an_integer` para `copied_integer`
     let copied_integer = an_integer;
 
     println!("An integer: {:?}", copied_integer);
     println!("A boolean: {:?}", a_boolean);
     println!("Meet the unit value: {:?}", unit);
 
-    // The compiler warns about unused variable bindings; these warnings can
-    // be silenced by prefixing the variable name with an underscore
+    // O compilador avisa sobre vínculos de variáveis não usados;
+    // estes avisos podem ser silenciados prefixando o nome da variável
+    // com um sublinhado.
     let _unused_variable = 3u32;
 
     let noisy_unused_variable = 2u32;
-    // FIXME ^ Prefix with an underscore to suppress the warning
-    // Please note that warnings may not be shown in a browser
-}
+    // FIXME ^ Prefixe com um sublinhado para suprimir o aviso
+    // Nota que os avisos podem não ser exibidos num navegador
 ```
