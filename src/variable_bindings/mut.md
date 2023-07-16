@@ -1,6 +1,6 @@
-# Mutability
+# Mutabilidade
 
-Variable bindings are immutable by default, but this can be overridden using the `mut` modifier.
+Os vínculos de variável são imutáveis por padrão, mas isto pode ser sobreposto usando o modificador `mut`.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 
     println!("After mutation: {}", mutable_binding);
 
-    // Error! Cannot assign a new value to an immutable variable
+    // Erro! Não é possível atribuir um novo valor à uma variável imutável
     _immutable_binding += 1;
 }
 ```
 
-The compiler will throw a detailed diagnostic about mutability errors.
+O compilador lançará um diagnóstico detalhado sobre os erros de mutabilidade.
