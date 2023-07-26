@@ -2,7 +2,7 @@
 
 A Rust fornece segurança de tipo através da definição de tipos estáticos. Os vínculos de variável pode ter o seu tipo anotado quando declarados. No entanto, na maioria dos casos, o compilador será capaz de inferir o tipo da variável a partir do contexto, reduzindo grandemente o fardo da anotação.
 
-Os valores (tais como literais) pode ser vinculados às variáveis, usando o vínculo `let`.
+Os valores (tais como literais) podem ser vinculados às variáveis, usando o vínculo de `let`.
 
 ```rust,editable
 fn main() {
