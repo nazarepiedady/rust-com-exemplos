@@ -1,11 +1,11 @@
-# Types
+# Tipos
 
-Rust provides several mechanisms to change or define the type of primitive and user defined types. The following sections cover:
+A Rust fornece vários mecanismos para mudar ou definir o tipo de tipos primitivos e definidos pelo utilizador. As seguintes seções cobrem:
 
-* [Casting] between primitive types
-* Specifying the desired type of [literals]
-* Using [type inference]
-* [Aliasing] types
+* [Moldagem][Casting] entre tipos primitivos
+* Especificação do tipo de [literal][literals] desejado
+* Uso de [inferência de tipo][type inference]
+* [Definição de pseudónimos][Aliasing] de tipos
 
 [Casting]: types/cast.md
 [literals]: types/literals.md
