@@ -14,7 +14,6 @@ fn main() {
 
         println!("inner short: {}", short_lived_binding);
     }
-    // End of the block
     // Fim do bloco
 
     // Erro! `short_lived_binding` não existe neste âmbito
