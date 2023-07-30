@@ -1,9 +1,9 @@
-# Aliasing
+# Pseudónimos
 
-The `type` statement can be used to give a new name to an existing type. Types must have `UpperCamelCase` names, or the compiler will raise a warning. The exception to this rule are the primitive types: `usize`, `f32`, etc.
+A declaração `type` pode ser usada para dar um novo nome à um tipo existente. Os tipos devem ter nomes com o seguinte padrão `UpperCamelCase`, ou o compilador levantará um aviso.  As exceções à esta regra são os tipos primitivos: `usize`, `f32`, etc.
 
 ```rust,editable
-// `NanoSecond`, `Inch`, and `U64` are new names for `u64`.
+// `NanoSecond`, `Inch`, e `U64` são novos nomes para `u64`.
 type NanoSecond = u64;
 type Inch = u64;
 type U64 = u64;
@@ -13,8 +13,8 @@ fn main() {
     let nanoseconds: NanoSecond = 5 as U64;
     let inches: Inch = 2 as U64;
 
-    // Note that type aliases *don't* provide any extra type safety, because
-    // aliases are *not* new types
+    // Nota que os pseudónimos de tipo *não* fornecem qualquer segurança de
+    // tipo adicional, porque os pseudónimos *não* são novos tipos
     println!("{} nanoseconds + {} inches = {} unit?",
              nanoseconds,
              inches,
@@ -22,8 +22,8 @@ fn main() {
 }
 ```
 
-The main use of aliases is to reduce boilerplate; for example the `io::Result<T>` type is an alias for the `Result<T, io::Error>` type.
+O uso principal de pseudónimos é reduzir a complexidade; por exemplo o tipo `io::Result<T>` é um pseudónimo para o tipo `Result<T, io::Error>`.
 
-### See also:
+### Consulte também:
 
-[Attributes](../attribute.md)
+[Atributos](../attribute.md)
