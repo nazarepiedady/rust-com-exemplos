@@ -1,21 +1,21 @@
-# Literals
+# Literais
 
-Numeric literals can be type annotated by adding the type as a suffix. As an example, to specify that the literal `42` should have the type `i32`, write `42i32`.
+Os literais numéricos podem ser anotados por tipo adicionado o tipo como um sufixo. Como um exemplo, para especificar que o literal `42` deveria ter o tipo `i32`, escreva `42i32`.
 
-The type of unsuffixed numeric literals will depend on how they are used. If no constraint exists, the compiler will use `i32` for integers, and `f64` for floating-point numbers.
+O tipo dos literais numéricos sem sufixo depende de como são usados. Se não existir nenhuma restrição, o compilador usará `i32` para os inteiros, e `f64` para os números de ponto flutuante.
 
 ```rust,editable
 fn main() {
-    // Suffixed literals, their types are known at initialization
+    // Literais com sufixo, seus tipos são conhecidos na inicialização
     let x = 1u8;
     let y = 2u32;
     let z = 3f32;
 
-    // Unsuffixed literals, their types depend on how they are used
+    // Literais sem sufixo, seus tipos dependem de como são usados
     let i = 1;
     let f = 1.0;
 
-    // `size_of_val` returns the size of a variable in bytes
+    // `size_of_val` retorna o tamanho duma variável em bytes
     println!("size of `x` in bytes: {}", std::mem::size_of_val(&x));
     println!("size of `y` in bytes: {}", std::mem::size_of_val(&y));
     println!("size of `z` in bytes: {}", std::mem::size_of_val(&z));
@@ -24,9 +24,9 @@ fn main() {
 }
 ```
 
-There are some concepts used in the previous code that haven't been explained yet, here's a brief explanation for the impatient readers:
+Existem alguns conceitos usados no código anterior que ainda não foram explicados, cá está uma breve explicação para os leitores impacientes:
 
-* `std::mem::size_of_val` is a function, but called with its *full path*. Code can be split in logical units called *modules*. In this case, the `size_of_val` function is defined in the `mem` module, and the `mem` module is defined in the `std` *crate*. For more details, see [modules][mod] and [crates][crate].
+* `std::mem::size_of_val` é uma função, mas chamada com o seu *caminho completo*. O código pode ser separado em unidades lógicas chamadas de *módulos*. Neste caso, a função `size_of_val` é definida no módulo `mem`, e o módulo `mem` é definida no *caixote* `std`. Para mais detalhes, consulte os [módulos][mod] e [caixotes][crate].
 
 [mod]: ../mod.md
 [crate]: ../crates.md
