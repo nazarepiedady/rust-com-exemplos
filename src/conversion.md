@@ -1,8 +1,8 @@
-# Conversion
+# Conversão
 
-Primitive types can be converted to each other through [casting].
+Os tipos primitivos podem ser convertidos à um ao outro através da [moldagem][casting].
 
-Rust addresses conversion between custom types (i.e., `struct` and `enum`) by the use of [traits]. The generic conversions will use the [`From`] and [`Into`] traits. However there are more specific ones for the more common cases, in particular when converting to and from `String`s.
+A Rust aborda a conversão entre tipos personalizados (por exemplo, `struct` e `enum`) com o uso de [características][traits]. As conversões genéricas usarão as características [`From`] e [`Into`]. No entanto existem aquelas mais específicas para casos mais comuns, em especial quando convertemos para e de `String`.
 
 [casting]: types/cast.md
 [traits]: trait.md
