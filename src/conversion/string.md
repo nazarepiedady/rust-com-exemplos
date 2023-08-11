@@ -1,8 +1,8 @@
-# To and from Strings
+# Para e a partir de Sequências de Caracteres
 
-## Converting to String
+## Converter para Sequência de Caracteres
 
-To convert any type to a `String` is as simple as implementing the [`ToString`] trait for the type. Rather than doing so directly, you should implement the [`fmt::Display`][Display] trait which automagically provides [`ToString`] and also allows printing the type as discussed in the section on [`print!`][print].
+Converter qualquer tipo para uma `String` é tão simples quando implementar a característica [`ToString`] para o tipo. Ao invés de fazer isto diretamente, deves implementar a característica [`fmt::Display`][Display] que auto-magicamente fornece [`ToString`] e também permite imprimir o tipo conforme discutidos na seção [`print!`][print].
 
 ```rust,editable
 use std::fmt;
@@ -23,11 +23,11 @@ fn main() {
 }
 ```
 
-## Parsing a String
+## Analisando uma Sequência de Caracteres
 
-One of the more common types to convert a string into is a number. The idiomatic approach to this is to use the [`parse`] function and either to arrange for type inference or to specify the type to parse using the 'turbofish' syntax. Both alternatives are shown in the following example.
+Um dos tipos mais comum a converter para uma sequência de caracteres é um número. A abordagem idiomática para isto é usar a função [`parse`] e ou organizar para a inferência de tipo ou especificar o tipo a analisar usando a sintaxe 'turbofish'. Ambas alternativas são mostradas no seguinte exemplo. 
 
-This will convert the string into the type specified as long as the [`FromStr`] trait is implemented for that type. This is implemented for numerous types within the standard library. To obtain this functionality on a user defined type simply implement the [`FromStr`] trait for that type.
+Isto converterá a sequência de caracteres para o tipo especificado enquanto a característica [`FromStr`] é implementada para este tipo. Isto é implementado para numerosos tipos dentro da biblioteca padrão. Para obter esta funcionalidade num tipo definido pelo utilizador simplesmente implemente a característica [`FromStr`] para este tipo.
 
 ```rust,editable
 fn main() {
