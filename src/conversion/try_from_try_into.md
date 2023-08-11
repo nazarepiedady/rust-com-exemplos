@@ -1,6 +1,6 @@
-# `TryFrom` and `TryInto`
+# `TryFrom` e `TryInto`
 
-Similar to [`From` and `Into`][from-into], [`TryFrom`] and [`TryInto`] are generic traits for converting between types. Unlike `From`/`Into`, the `TryFrom`/`TryInto` traits are used for fallible conversions, and as such, return [`Result`]s.
+Semelhante ao [`From` e `Into`][from-into], [`TryFrom`] e [`TryInto`] são características genéricas para converter entre tipos. Ao contrário de `From` e `Into`, as características `TryFrom` e `TryInto` são usadas para conversões falíveis, e como tal, retornam [`Result`].
 
 [from-into]: from_into.html
 [`TryFrom`]: https://doc.rust-lang.org/std/convert/trait.TryFrom.html
