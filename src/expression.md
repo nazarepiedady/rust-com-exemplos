@@ -1,30 +1,30 @@
-# Expressions
+# Expressões
 
-A Rust program is (mostly) made up of a series of statements:
+Um programa de Rust é (maioritariamente) composto duma série de declarações e expressões:
 
 ```rust,editable
 fn main() {
-    // statement
-    // statement
-    // statement
+    // declaração
+    // declaração
+    // declaração
 }
 ```
 
-There are a few kinds of statements in Rust. The most common two are declaring a variable binding, and using a `;` with an expression:
+Existem alguns tipos de declarações na Rust. Os dois mais comuns são declaração dum vínculo de variável, e o uso dum `;` com expressão:
 
 ```rust,editable
 fn main() {
-    // variable binding
+    // vínculo de variável
     let x = 5;
 
-    // expression;
+    // expressão;
     x;
     x + 1;
     15;
 }
 ```
 
-Blocks are expressions too, so they can be used as values in assignments. The last expression in the block will be assigned to the place expression such as a local variable. However, if the last expression of the block ends with a semicolon, the return value will be `()`:
+Os blocos são também expressões, então podem ser usados como valores em atribuições. A última expressão no bloco serão atribuídos à expressão do local tal como uma variável local. No entanto, se a última expressão do bloco termina com um sinal de ponto e vírgula, o valor de retorno será `()`:
 
 ```rust,editable
 fn main() {
@@ -34,12 +34,12 @@ fn main() {
         let x_squared = x * x;
         let x_cube = x_squared * x;
 
-        // This expression will be assigned to `y`
+        // Esta expressão será atribuída à `y`
         x_cube + x_squared + x
     };
 
     let z = {
-        // The semicolon suppresses this expression and `()` is assigned to `z`
+        // O ponto e vírgula suprime esta expressão e `()` é atribuído à `z`
         2 * x;
     };
 
