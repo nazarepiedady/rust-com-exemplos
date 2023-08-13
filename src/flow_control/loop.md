@@ -1,8 +1,8 @@
-# loop
+# laço de repetição
 
-Rust provides a `loop` keyword to indicate an infinite loop.
+A Rust fornece uma palavra-chave `loop` para indicar um laço infinito.
 
-The `break` statement can be used to exit a loop at anytime, whereas the `continue` statement can be used to skip the rest of the iteration and start a new one.
+A declaração `break` pode ser usada para sair dum laço de repetição a qualquer momento, ao passo que a declaração `continue` pode ser usada para ignorar o resto da iteração e começar uma nova.
 
 ```rust,editable
 fn main() {
@@ -10,14 +10,14 @@ fn main() {
 
     println!("Let's count until infinity!");
 
-    // Infinite loop
+    // Laço de repetição infinita
     loop {
         count += 1;
 
         if count == 3 {
             println!("three");
 
-            // Skip the rest of this iteration
+            // Ignorar o resto desta iteração
             continue;
         }
 
@@ -26,7 +26,7 @@ fn main() {
         if count == 5 {
             println!("OK, that's enough");
 
-            // Exit this loop
+            // Sair deste laço de repetição
             break;
         }
     }
