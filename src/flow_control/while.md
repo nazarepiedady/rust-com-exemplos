@@ -1,15 +1,15 @@
-# while
+# `while`
 
-The `while` keyword can be used to run a loop while a condition is true.
+A palavra-chave `while` pode ser usada para executar um laço de repetição enquanto (`while`) uma condição for verdadeira.
 
-Let's write the infamous [FizzBuzz][fizzbuzz] using a `while` loop.
+Vamos escrever o infame [FizzBuzz][fizzbuzz] usando um laço de repetição `while`.
 
 ```rust,editable
 fn main() {
-    // A counter variable
+    // Uma variável contadora
     let mut n = 1;
 
-    // Loop while `n` is less than 101
+    // Laço de repetição enquanto `n` for menor do que 101 
     while n < 101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -21,7 +21,7 @@ fn main() {
             println!("{}", n);
         }
 
-        // Increment counter
+        // Incrementar contador
         n += 1;
     }
 }
