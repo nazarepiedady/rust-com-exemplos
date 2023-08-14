@@ -1,9 +1,6 @@
-# Returning from loops
+# Regressar dos Laços de Repetições
 
-One of the uses of a `loop` is to retry an operation until it succeeds. If the
-operation returns a value though, you might need to pass it to the rest of the
-code: put it after the `break`, and it will be returned by the `loop`
-expression.
+Um dos usos dum `loop` é para voltar a tentar uma operação até ser bem-sucedida. Mas se a operação retornar um valor, podes precisar de passá-lo ao resto do código: colocá-lo depois da `break`, e será retornado pela expressão `loop`.
 
 ```rust,editable
 fn main() {
