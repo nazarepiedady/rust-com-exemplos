@@ -1,4 +1,4 @@
-# laço de repetição
+# Laço de Repetição
 
 A Rust fornece uma palavra-chave `loop` para indicar um laço infinito.
 
