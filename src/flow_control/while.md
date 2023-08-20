@@ -2,7 +2,7 @@
 
 A palavra-chave `while` pode ser usada para executar um laço de repetição enquanto (`while`) uma condição for verdadeira.
 
-Vamos escrever o infame [FizzBuzz][fizzbuzz] usando um laço de repetição `while`.
+Escreveremos o infame [FizzBuzz][fizzbuzz] usando um laço de repetição `while`.
 
 ```rust,editable
 fn main() {
