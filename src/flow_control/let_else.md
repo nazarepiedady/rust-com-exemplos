@@ -1,10 +1,8 @@
-# let-else
+# `let-else`
 
+> 🛈 estável desde a: rust 1.65
 
-> 🛈 stable since: rust 1.65
-
-
-With `let`-`else`, a refutable pattern can match and bind variables in the surrounding scope like a normal `let`, or else diverge (e.g. `break`, `return`, `panic!`) when the pattern doesn't match.
+Com `let`-`else`, um padrão refutável pode corresponder e vincular variáveis no âmbito envolvente como um `let` normal, se não diverge (por exemplo, `break`, `return`, `panic!`) quando o padrão não corresponder:
 
 ```rust
 use std::str::FromStr;
@@ -23,7 +21,7 @@ fn get_count_item(s: &str) -> (u64, &str) {
 assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
 ```
 
-The scope of name bindings is the main thing that makes this different from `match` or `if let`-`else` expressions. You could previously approximate these patterns with an unfortunate bit of repetition and an outer `let`:
+O âmbito de vínculos de nome é a coisa principal que torna isto diferente de `match` ou expressões `if let`-`else`. Nós poderíamos anteriormente aproximar estes padrões com um lamentável bit de repetição e um `let` externo:
 
 ```rust
 # use std::str::FromStr;
@@ -45,9 +43,9 @@ The scope of name bindings is the main thing that makes this different from `mat
 # assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
 ```
 
-### See also:
+### Consulte também:
 
-[option][option], [match][match], [if let][if_let] and the [let-else RFC][let_else_rfc].
+[`option`][option], [`match`][match], [`if let`][if_let] e o [RFC de `let-else`][let_else_rfc].
 
 
 [match]: ./match.md
