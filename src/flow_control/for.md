@@ -1,14 +1,14 @@
-# for loops
+# Laços de Repetição `for`
 
-## for and range
+## `for` e o limite
 
-The `for in` construct can be used to iterate through an `Iterator`. One of the easiest ways to create an iterator is to use the range notation `a..b`. This yields values from `a` (inclusive) to `b` (exclusive) in steps of one.
+A construção `for in` pode ser usada para iterar através dum `Iterator`. Uma das maneiras mais fáceis de criar um iterador é usar a notação de limite `a..b`. Isto produz valores a partir de `a` (inclusivo) à `b` (exclusivo) em passos de um.
 
-Let's write FizzBuzz using `for` instead of `while`.
+Vamos escrever FizzBuzz usando `for` ao invés de `while`.
 
 ```rust,editable
 fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
+    // `n` receberá os valores: 1, 2, ..., 100 em cada iteração
     for n in 1..101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -23,11 +23,11 @@ fn main() {
 }
 ```
 
-Alternatively, `a..=b` can be used for a range that is inclusive on both ends. The above can be written as:
+Alternativamente, `a..=b` pode ser usado para um limite que é inclusivo em ambos fins. O exemplo acima pode ser escrito como:
 
 ```rust,editable
 fn main() {
-    // `n` will take the values: 1, 2, ..., 100 in each iteration
+    // `n` receberá os valores: 1, 2, ..., 100 em cada iteração
     for n in 1..=100 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -42,13 +42,13 @@ fn main() {
 }
 ```
 
-## for and iterators
+## `for` e os iteradores
 
-The `for in` construct is able to interact with an `Iterator` in several ways. As discussed in the section on the [Iterator][iter] trait, by default the `for` loop will apply the `into_iter` function to the collection. However, this is not the only means of converting collections into iterators.
+A construção `for in` é capaz de interagir com um `Iterator` de muitas maneiras. Conforme discutido na seção sobre a característica [`Iterator`][iter], por padrão o laço `for` aplicará a função `into_iter` à coleção. No entanto, isto não é o único significado de converter coleções em iteradores.
 
-`into_iter`, `iter` and `iter_mut` all handle the conversion of a collection into an iterator in different ways, by providing different views on the data within.
+`into_iter`, `iter` e `iter_mut` manipulam a conversão duma coleção num iterador de maneiras diferentes, fornecendo visões diferentes sobre os dados no interior.
 
-* `iter` - This borrows each element of the collection through each iteration. Thus leaving the collection untouched and available for reuse after the loop.
+* `iter` - Este pedi emprestado cada elemento da coleção durante cada iteração. Assim deixando a coleção intocada e disponível para reuso depois do laço.
 
 ```rust,editable
 fn main() {
@@ -57,7 +57,7 @@ fn main() {
     for name in names.iter() {
         match name {
             &"Ferris" => println!("There is a rustacean among us!"),
-            // TODO ^ Try deleting the & and matching just "Ferris"
+            // TODO ^ Tente eliminar o & e corresponder apenas "Ferris"
             _ => println!("Hello {}", name),
         }
     }
@@ -66,7 +66,7 @@ fn main() {
 }
 ```
 
-* `into_iter` - This consumes the collection so that on each iteration the exact data is provided. Once the collection has been consumed it is no longer available for reuse as it has been 'moved' within the loop.
+* `into_iter` - Este consume a coleção para que em cada iteração o dado exato ser fornecido. Assim que a coleção tiver sido consumida não estará disponível para reuso como se tivesse sido 'movida' dentro do laço.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -80,11 +80,11 @@ fn main() {
     }
     
     println!("names: {:?}", names);
-    // FIXME ^ Comment out this line
+    // FIXME ^ Comente esta linha
 }
 ```
 
-* `iter_mut` - This mutably borrows each element of the collection, allowing for the collection to be modified in place.
+* `iter_mut` - Este pedi emprestado de maneira mutável cada elemento da coleção, permitindo a coleção ser modificada no lugar.
 
 ```rust,editable
 fn main() {
@@ -101,9 +101,9 @@ fn main() {
 }
 ```
 
-In the above snippets note the type of `match` branch, that is the key difference in the types of iteration. The difference in type then of course implies differing actions that are able to be performed.
+Nos trechos acima nota o tipo do ramo `match`, que é a diferença chave nos tipos de iteração. A diferença no tipo portanto com certeza implica que diferentes ações que são capazes de ser realizadas.
 
-### See also:
+### Consulte também:
 
 [Iterator][iter]
 
