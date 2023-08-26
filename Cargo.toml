@@ -1,7 +1,0 @@
-[package]
-name = "rust-by-examples-pt"
-version = "0.1.0"
-authors = ["rust-lang", "nazarepiedady"]
-
-[dependecies]
-mdbook = "0.4.30"
