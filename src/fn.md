@@ -10,11 +10,11 @@ Vamos reescrever o FizzBuzz usando funções:
 // Diferente de C e C++, não existe restrição na ordem das definições das funções
 fn main() {
     // Podemos usar a função aqui, e definir ela depois em outro local
-    fizzbuzz_ate(100);
+    fizzbuzz_to(100);
 }
 
 // Uma função que retorna um valor boleano
-fn numero_divisivel_por(lhs: u32, rhs: u32) -> bool {
+fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
     // Caso específico, retorne antes
     if rhs == 0 {
         return false;
@@ -26,11 +26,11 @@ fn numero_divisivel_por(lhs: u32, rhs: u32) -> bool {
 
 // Funções que "não" retornam um valor, na verdade, retornam o tipo unitário `()`
 fn fizzbuzz(n: u32) -> () {
-    if numero_divisivel_por(n, 15) {
+    if is_divisible_by(n, 15) {
         println!("fizzbuzz");
-    } else if numero_divisivel_por(n, 3) {
+    } else if is_divisible_by(n, 3) {
         println!("fizz");
-    } else if numero_divisivel_por(n, 5) {
+    } else if is_divisible_by(n, 5) {
         println!("buzz");
     } else {
         println!("{}", n);
@@ -38,7 +38,7 @@ fn fizzbuzz(n: u32) -> () {
 }
 
 // Quando uma função retorna `()`, o tipo pode ser omitido da assinatura
-fn fizzbuzz_ate(n: u32) {
+fn fizzbuzz_to(n: u32) {
     for n in 1..=n {
         fizzbuzz(n);
     }
