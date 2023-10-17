@@ -1,27 +1,27 @@
-# tuples
+# Tuplas
 
-Tuples can be destructured in a `match` as follows:
+As tuplas podem ser desestruturas num `match` da seguinte maneira:
 
 ```rust,editable
 fn main() {
     let triple = (0, -2, 3);
-    // TODO ^ Try different values for `triple`
+    // TODO ^ Experimente valores diferentes para `triple`
 
     println!("Tell me about {:?}", triple);
-    // Match can be used to destructure a tuple
+    // A correspondência pode ser usada para desestruturar uma tupla
     match triple {
-        // Destructure the second and third elements
+        // Desestruturar o segundo e o terceiro elemento
         (0, y, z) => println!("First is `0`, `y` is {:?}, and `z` is {:?}", y, z),
         (1, ..)  => println!("First is `1` and the rest doesn't matter"),
         (.., 2)  => println!("last is `2` and the rest doesn't matter"),
         (3, .., 4)  => println!("First is `3`, last is `4`, and the rest doesn't matter"),
-        // `..` can be used to ignore the rest of the tuple
+        // `..` pode ser usado para ignorar o resto da tupla
         _      => println!("It doesn't matter what they are"),
-        // `_` means don't bind the value to a variable
+        // `_` significa não vincular o valor à uma variável
     }
 }
 ```
 
-### See also:
+### Consulte também:
 
-[Tuples](../../../primitives/tuples.md)
+[Tuplas](../../../primitives/tuples.md)
