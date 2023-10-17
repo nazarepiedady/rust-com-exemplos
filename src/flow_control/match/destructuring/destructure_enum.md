@@ -1,17 +1,18 @@
-# enums
+# Enumerações
 
-An `enum` is destructured similarly:
+Uma `enum` é desestruturada de maneira semelhante:
 
 ```rust,editable
-// `allow` required to silence warnings because only
-// one variant is used.
+// `allow` exigido para silenciar os avisos
+// porque apenas uma variante é usada.
 #[allow(dead_code)]
 enum Color {
-    // These 3 are specified solely by their name.
+    // Estes 3 são especificados unicamente pelo seu nome.
     Red,
     Blue,
     Green,
-    // These likewise tie `u32` tuples to different names: color models.
+    // Estes igualmente atam as tuplas de `u32` para
+    // nomes diferentes: modelos de cor.
     RGB(u32, u32, u32),
     HSV(u32, u32, u32),
     HSL(u32, u32, u32),
@@ -21,10 +22,10 @@ enum Color {
 
 fn main() {
     let color = Color::RGB(122, 17, 40);
-    // TODO ^ Try different variants for `color`
+    // TODO ^ Experimente diferentes variantes para `color`
 
     println!("What color is it?");
-    // An `enum` can be destructured using a `match`.
+    // Uma `enum` pode ser desestruturada usando uma `match`.
     match color {
         Color::Red   => println!("The color is Red!"),
         Color::Blue  => println!("The color is Blue!"),
@@ -40,14 +41,14 @@ fn main() {
         Color::CMYK(c, m, y, k) =>
             println!("Cyan: {}, magenta: {}, yellow: {}, key (black): {}!",
                 c, m, y, k),
-        // Don't need another arm because all variants have been examined
+        // Não precisa doutro braço porque todas variantes foram examinadas
     }
 }
 ```
 
-### See also:
+### Consulte também:
 
-[`#[allow(...)]`][allow], [color models][color_models] and [`enum`][enum]
+[`#[allow(...)]`][allow], [modelos de cor][color_models] e [`enum`][enum]
 
 [allow]: ../../../attribute/unused.md
 [color_models]: https://en.wikipedia.org/wiki/Color_model
