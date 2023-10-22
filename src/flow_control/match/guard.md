@@ -1,6 +1,6 @@
-# Guards
+# Guardas
 
-A `match` *guard* can be added to filter the arm.
+Uma *guarda* de `match` pode ser adicionada para filtrar o braço.
 
 ```rust,editable
 #[allow(dead_code)]
@@ -11,11 +11,11 @@ enum Temperature {
 
 fn main() {
     let temperature = Temperature::Celsius(35);
-    // ^ TODO try different values for `temperature`
+    // ^ TODO experimento diferentes valores para `temperature`
 
     match temperature {
         Temperature::Celsius(t) if t > 30 => println!("{}C is above 30 Celsius", t),
-        // The `if condition` part ^ is a guard
+        // A parte da condição if ^ é uma guarda
         Temperature::Celsius(t) => println!("{}C is below 30 Celsius", t),
 
         Temperature::Fahrenheit(t) if t > 86 => println!("{}F is above 86 Fahrenheit", t),
@@ -24,8 +24,7 @@ fn main() {
 }
 ```
 
-Note that the compiler won't take guard conditions into account when checking
-if all patterns are covered by the match expression.
+Nota que o compilador não levará as condições da guarda em consideração quando verificamos se todos os padrões estão cobertos pela expressão de correspondência.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -35,12 +34,12 @@ fn main() {
         i if i == 0 => println!("Zero"),
         i if i > 0 => println!("Greater than zero"),
         // _ => unreachable!("Should never happen."),
-        // TODO ^ uncomment to fix compilation
+        // TODO ^ remova o comentário para corrigir a compilação
     }
 }
 ```
 
-### See also:
+### Consulte Também:
 
-[Tuples](../../primitives/tuples.md)
-[Enums](../../custom_types/enum.md)
+[Tuplas](../../primitives/tuples.md)
+[Enumerações](../../custom_types/enum.md)
