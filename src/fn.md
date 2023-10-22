@@ -1,30 +1,34 @@
 # Funções
 
-Funções são declaradas usando a palavra-chave `fn`. Seus argumentos são anotados com tipagem assim como variáveis, e se a função retorna algum valor, o tipo de retorno deve ser especificado após uma flecha `->`.
+As funções são declaras usando a palavra-chave `fn`. Os seus argumentos têm os tipos anotados, tal como as variáveis, e se a função retornar um valor, o tipo de retorno de ser especificado depois duma flecha (ou seta) `->`.
 
-A expressão final de uma função será usada como valor de retorno. Alternativamente, você pode usar `return` para retornar um valor no meio da função, até mesmo dentro de loops ou `if`s.
+A expressão final numa função será usada como valor de retorno. Alternativamente, a declaração de `return` pode ser usada para retornar um valor mais cedo a partir de dentro da função, até mesmo a partir de dentro dos laços de repetição ou declarações de `if`.
 
-Vamos reescrever o FizzBuzz usando funções:
+Vamos reescrever o FizzBuzz usando funções!:
 
 ```rust,editable
-// Diferente de C e C++, não existe restrição na ordem das definições das funções
+// Diferente de C e C++,
+// não existe restrição sobre a ordem de definições de função
 fn main() {
-    // Podemos usar a função aqui, e definir ela depois em outro local
+    // Nós podemos usar esta função,
+    // e defini-la em algum lugar depois
     fizzbuzz_to(100);
 }
 
-// Uma função que retorna um valor boleano
+// Função que retorna um valor booleano
 fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
-    // Caso específico, retorne antes
+    // Caso extremo, retornar prematuramente
     if rhs == 0 {
         return false;
     }
 
-    // Isso é a última expressão, então a palavra-chave `return` não é necessária
+    // Isto é uma expressão,
+    // a palavra-chave `return` não é necessária
     lhs % rhs == 0
 }
 
-// Funções que "não" retornam um valor, na verdade, retornam o tipo unitário `()`
+// As funções que "não" retornam um valor,
+// na realidade retornam o tipo unitário `()`
 fn fizzbuzz(n: u32) -> () {
     if is_divisible_by(n, 15) {
         println!("fizzbuzz");
@@ -37,7 +41,8 @@ fn fizzbuzz(n: u32) -> () {
     }
 }
 
-// Quando uma função retorna `()`, o tipo pode ser omitido da assinatura
+// Quando uma função retornar `()`,
+// o tipo de retorno pode ser omitido da assinatura
 fn fizzbuzz_to(n: u32) {
     for n in 1..=n {
         fizzbuzz(n);
