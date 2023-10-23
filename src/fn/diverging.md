@@ -1,6 +1,6 @@
-# Diverging functions
+# Funções Divergentes
 
-Diverging functions never return. They are marked using `!`, which is an empty type.
+As funções divergentes nunca retornam. Elas são marcadas usando `!`, o qual é um tipo vazio.
 
 ```rust
 fn foo() -> ! {
@@ -8,9 +8,9 @@ fn foo() -> ! {
 }
 ```
 
-As opposed to all the other types, this one cannot be instantiated, because the set of all possible values this type can have is empty. Note that, it is different from the `()` type, which has exactly one possible value.
+Em oposição à todos os outros tipos, esta não pode ser instanciada, porque o conjunto de todos os possíveis valores que este tipo pode ter é vazio. Nota que, é diferente do tipo `()`, que tem exatamente um valor possível.
 
-For example, this function returns as usual, although there is no information in the return value.
+Por exemplo, esta função retorna de costume, embora não exista informação no valor de retorno:
 
 ```rust
 fn some_fn() {
@@ -23,7 +23,7 @@ fn main() {
 }
 ```
 
-As opposed to this function, which will never return the control back to the caller.
+Em posição à esta função, que nunca retornará o controlo de volta ao chamador.
 
 ```rust,ignore
 #![feature(never_type)]
@@ -34,21 +34,21 @@ fn main() {
 }
 ```
 
-Although this might seem like an abstract concept, it is in fact very useful and often handy. The main advantage of this type is that it can be cast to any other one and therefore used at places where an exact type is required, for instance in `match` branches. This allows us to write code like this:
+Embora isto possa parecer como um conceito abstrato, é de fato muito útil e muitas vezes prático. A principal vantagem deste tipo é que pode ser fundido à qualquer outro e, portanto usado em lugares onde um tipo exato é obrigatório, por exemplo nos ramos de `match`. Isto permite-nos escrever código como este:
 
 ```rust
 fn main() {
     fn sum_odd_numbers(up_to: u32) -> u32 {
         let mut acc = 0;
         for i in 0..up_to {
-            // Notice that the return type of this match expression must be u32
-            // because of the type of the "addition" variable.
+            // Repara que o tipo de retorno desta expressão de correspondência
+            // de ser u32 por causa do tipo da variável "addition".
             let addition: u32 = match i%2 == 1 {
-                // The "i" variable is of type u32, which is perfectly fine.
+                // A variável "i" é do tipo u32, que está perfeitamente correta.
                 true => i,
-                // On the other hand, the "continue" expression does not return
-                // u32, but it is still fine, because it never returns and therefore
-                // does not violate the type requirements of the match expression.
+                // Por outro lado, a expressão "continue" não retorna u32,
+                // mas ainda está bem, porque nunca retorna e portanto não viola os
+                // requisitos da expressão de correspondência.
                 false => continue,
             };
             acc += addition;
@@ -59,4 +59,4 @@ fn main() {
 }
 ```
 
-It is also the return type of functions that loop forever (e.g. `loop {}`) like network servers or functions that terminate the process (e.g. `exit()`).
+Ela também é o tipo de retorno das função que percorrem os laços de repetição para sempre (por exemplo, `loop {}`) tal como servidores de rede ou funções que terminam o processo (por exemplo, `exit()`).
