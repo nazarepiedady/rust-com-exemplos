@@ -1,4 +1,4 @@
-# Literais e operadores
+# Literais e Operadores
 
 Os inteiros `1`, flutuantes `1.2`, caracteres `'a'`, sequências de caracteres `"abc"`, booleanos `true` e o tipo unitário `()` podem ser expressados usando literais.
 
