@@ -1,8 +1,8 @@
-# Arranjos e Pedaços
+# Vetores e Pedaços
 
-Um arranjo é uma coleção de objetos do mesmo tipo `T`, armazenados na memória contígua. Os arranjos são criados usando parênteses retos `[]`, e o seu comprimento, que é conhecido em tempo de compilação, é parte da sua assinatura de tipo `[T; length]`.
+Um vetor é uma coleção de objetos do mesmo tipo `T`, armazenados na memória contígua. Os vetores são criados usando parênteses retos `[]`, e o seu comprimento, que é conhecido em tempo de compilação, é parte da sua assinatura de tipo `[T; length]`.
 
-Os pedaços são semelhantes aos arranjos, mas seu comprimento não é conhecido em tempo de compilação. Ao invés disto, um pedaço é um objeto de duas palavras; a primeira palavra é um ponteiro para o dado, e a segunda palavra o comprimento do pedaço. O tamanho da palavra é o mesmo que não ter tamanho `usize`, determinado pela arquitetura do processador, por exemplo, 64 bits numa x86-64. Os pedaços podem ser usados para pedir emprestado uma seção dum arranjo e têm a assinatura de tipo `&[T]`:
+Os pedaços são semelhantes aos vetores, mas seu comprimento não é conhecido em tempo de compilação. Ao invés disto, um pedaço é um objeto de duas palavras; a primeira palavra é um ponteiro para o dado, e a segunda palavra o comprimento do pedaço. O tamanho da palavra é o mesmo que não ter tamanho `usize`, determinado pela arquitetura do processador, por exemplo, 64 bits numa x86-64. Os pedaços podem ser usados para pedir emprestado uma seção dum vetor e têm a assinatura de tipo `&[T]`:
 
 ```rust,editable,ignore,mdbook-runnable
 use std::mem;
@@ -14,7 +14,7 @@ fn analyze_slice(slice: &[i32]) {
 }
 
 fn main() {
-    // Arranjo de tamanho fixo (assinatura de tipo é supérflua).
+    // Vetor de tamanho fixo (assinatura de tipo é supérflua).
     let xs: [i32; 5] = [1, 2, 3, 4, 5];
 
     // Todos os elementos podem ser inicializados para o mesmo valor.
@@ -24,17 +24,17 @@ fn main() {
     println!("First element of the array: {}", xs[0]);
     println!("Second element of the array: {}", xs[1]);
 
-    // `len` retorna a contagem de elementos no arranjo.
+    // `len` retorna a contagem de elementos no vetor.
     println!("Number of elements in array: {}", xs.len());
 
-    // Os arranjos são pilhas alocadas.
+    // Os vetores são pilhas alocadas.
     println!("Array occupies {} bytes", mem::size_of_val(&xs));
 
-    // Os arranjos podem ser pedidos emprestado como pedaços.
+    // Os vetores podem ser pedidos emprestado como pedaços.
     println!("Borrow the whole array as a slice.");
     analyze_slice(&xs);
 
-    // Os pedaços podem apontar para uma seção dum arranjo.
+    // Os pedaços podem apontar para uma seção dum vetor.
     // Eles são da forma [starting_index..ending_index].
     // `starting_index` é a primeira posição no pedaço.
     // `ending_index` é a última posição no pedaço.
@@ -46,7 +46,7 @@ fn main() {
     assert_eq!(&empty_array, &[]);
     assert_eq!(&empty_array, &[][..]); // O mesmo mas mais verboso
 
-    // Os arranjos podem ser acessados seguramente usando `.get`, que retorna
+    // Os vetores podem ser acessados seguramente usando `.get`, que retorna
     // uma `Option`. Isto pode ser correspondido como mostrado abaixo, ou usado
     // com `.expect()` se gostarias que o programa saísse com uma mensagem
     // agradável ao invés de felizmente continuar.
@@ -57,7 +57,7 @@ fn main() {
         }
     }
 
-    // Indexação fora do limite no arranjo causa erro de tempo de compilação.
+    // Indexação fora do limite no vetor causa erro de tempo de compilação.
     //println!("{}", xs[5]);
     // // Indexação fora do limite no pedaço causa erro de tempo de execução.
     //println!("{}", xs[..][5]);
