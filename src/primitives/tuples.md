@@ -35,7 +35,7 @@ fn main() {
     // Mas tuplas longas (mas de 12 elementos) não podem ser imprimidas.
     //let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
     //println!("Too long tuple: {:?}", too_long_tuple);
-    // TODO ^ Desfaça o comentário das 2 linhas acima
+    // TODO ^ Tente desfazer o comentário das 2 linhas acima
     // para veres o erro do compilador
 
     let pair = (1, true);
@@ -68,7 +68,7 @@ fn main() {
    ( 2.1 2.2 )
    ```
 
-   Tu podes querer consultar o exemplo para [impressão de exibição][print_display].
+   Podemos consultar o exemplo para [impressão de exibição][print_display].
 2. Adicione uma função `transpose` usando a função `reverse` como molde, que aceita uma matriz como argumento, e retorna uma matriz na qual dos elementos têm sido trocados. Por exemplo:
 
    ```rust,ignore
